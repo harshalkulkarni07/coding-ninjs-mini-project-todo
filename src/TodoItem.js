@@ -5,17 +5,23 @@ class TodoItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toDO: {
-        id: 1,
-        text: "Demo Task",
-        isCompleted: false
-      }
+      id: 1,
+      text: "Demo Task",
+      isCompleted: false,
     };
   }
+  handleCheckboxChange = () => {
+    alert(this.state.isCompleted);
+    this.setState({ isCompleted: !this.state.isCompleted }); // Toggle the checkbox state
+  };
   render() {
     return (
       <div className="todo-item">
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={this.state.isCompleted}
+          onChange={this.handleCheckboxChange}
+        />
         <label></label>
       </div>
     );
