@@ -11,7 +11,6 @@ class TodoItem extends React.Component {
     };
   }
   handleCheckboxChange = () => {
-    alert(this.state.isCompleted);
     this.setState({ isCompleted: !this.state.isCompleted }); // Toggle the checkbox state
   };
   render() {
